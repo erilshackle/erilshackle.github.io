@@ -7,13 +7,97 @@
     padding: 0;
 }
 
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
 :root{
-    --btnBg: linear-gradient(to left, #8606a0, #e700d4);
-    --TxtColor: #ddd;
+    --bg--color: #333;
+    --bg-button-grad: linear-gradient(to left, #753a88, #cc2b5e);
+    --bg-button: #cc2b5e;
+    --text-w-color: #f8f8ff;
+    --text-b-color: #101010;
+    --font-primary: 'Josefin Slab', sans-serif;
+    --font-secundary: 'Baloo Chettan 2', serif;
+    --font-title: 'Baloo 2';
+    --font-link: 'Mulish', sans-serif;
+    --color-button: #ddd;
+    --color-icons: #111;
+    --color-links: #88d;
 }
 
 body{
     font-size: 16px;
+}
+
+.menu-ham{
+    display: flex;
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    top: 2.5rem;
+    right: 2.5rem;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    cursor: pointer;
+    transition: .5s linear;
+}
+/* quando passar o mouse no menu-ham seu irmão sidebar vai aparecer 1rem sempre que menu-ham não tiver a classe show-menu*/
+.menu-ham:hover:not(.show-menu) ~ .sidebar{
+    right: -19rem;
+}
+.menu-ham.show-menu:hover > .tooltip{
+    transition: .5s ease .5s;
+    opacity: 1;
+}
+.menu-ham .lines{
+    background-color: var(--text-w-color);
+    width: 100%;
+    height: 3px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 4px black;
+    transition: .4s ease;
+}
+.menu-ham.show-menu{
+    right: 16rem;
+}
+.show-menu .lines:nth-child(1){
+    transform: rotate(45deg) translate(5px, 7px);
+}
+.show-menu .lines:nth-child(2){
+    opacity: 0;
+}
+.show-menu .lines:nth-child(3){
+    transform: rotate(-45deg) translate(5px, -8px);
+}
+.menu-ham .tooltip{
+    position: absolute;
+    background: var(--bg-button);
+    color: var(--color-button);
+    font: small-caps 200 1.2rem var(--font-link);
+    height: 2rem;
+    width: 6rem;
+    left: 150%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+.tooltip::before{
+    content: " ";
+    position: absolute;
+    right: 100%;
+    top: -20%;
+    z-index: -1;
+    background: var(--bg-button);
+    width: 1rem;
+    height: 1rem;
+    transform: rotate(45deg) translateX(100%);
 }
 
 header{
@@ -44,32 +128,32 @@ div.banner {
 }
 
 .banner h1{
-    font: 200 3.5rem 'Baloo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font: 200 3.5rem var(--font-title);
     text-shadow: .2rem .3rem 5px  black;
     animation: title 5s ease-out alternate infinite;
     color: #fff;
 }
 .banner p{
-    font: 100 1.5rem 'Josefin Slab', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #111;
+    font: 100 1.5rem var(--font-primary);
+    color: var(--text-w-color);
     text-shadow: 0rem .1rem 5px  #222;
     margin: .5rem .1rem 2rem;
     animation: entry 1s ease-out;
 }
 .banner p::before{
     content: "Dev: ";
-    color: #222;
+    color: silver;
 }
 .banner button{
     margin: 0;
     padding: 1rem 2.2rem;
-    font: 100 1rem 'Mulish', 'Josefin Slab', serif;
+    font: 100 1rem var(--font-link);
     border: none; outline: none;
     background: #cc2b5e;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: var(--bg-button-grad);
     border-radius: 2px;
-    color: var(--TxtColor);
+    color: var(--color-button);
     letter-spacing: 2px;
     text-transform: uppercase;
     box-shadow: .1rem .1rem 5px rgba(0, 0, 0, 0.7);
@@ -81,36 +165,69 @@ div.banner {
     filter: hue-rotate(40deg);
     color: #fff;
 }
+.banner button:active{
+    filter: invert(100%);
+}
 
-#menu__nav{
-    position: absolute;
-    top: 5%;
-    left: 0;
-    width: 100%;
+.sidebar{
+    position: fixed;
+    background: rgba(235, 232, 229, 0.7);  /* fallback for old browsers */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(236, 233, 230, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: -1px 0px 2px black;
+    top: 0;
+    right: -20rem;
+    width: 20rem;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-rows: 85% 15%;
+    overflow: hidden;
+    transition: right .5s ease-out;
+}
+.sidebar.show-menu{
+    right: 0;
+}
+
+
+.sidebar .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin-top: 45%; */
+}
+.menu__items{
+    display: inline-block;
+    margin-top: .5rem;
 }
 .menu__links{
-    display: flex;
-    justify-content: flex-start;
-    list-style: none;
-    font: 200 small-caps 20pt "Mulish";
+    font: 400 1.5rem var(--font-link);
+    text-decoration: none;
+    color: var(--color-links);
+}
+.menu__links:hover{
+    color: #44a;
 }
 
-.menu__items a{
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin-left: 55px;
-    padding: 0.5rem 1rem;
-    border-radius: 5px 15px;
-    opacity: .5;
-    transition: opacity,bacground, 0.5s ease;
+.sidebar .social__media{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
-.menu__items a:hover{
+.social__media a{
+    font-size: 2rem;
+    color: var(--color-icons);
+    opacity: .8;
+    margin: 0 1rem;
+    transition: transform,border .2s ease-out;
+}
+.social__media a:hover{
     opacity: 1;
-    background: linear-gradient(to bottom, #000000, #434343);
+    transform: translateY(-3px);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    border-width: .5rem;
 }
 
 /* ANIMATIONS */
@@ -126,11 +243,11 @@ div.banner {
 @keyframes entry {
     from{
         opacity: 0;
-        transform: rotateZ(-20deg);
+        transform: translateY(70px);
     }
     to{
         opacity: 1;
-        transform: rotateZ(0deg);
+        transform: translateY(0px);
     }
 }
 @keyframes title{
