@@ -37,7 +37,7 @@ body{
     width: 2rem;
     height: 2rem;
     top: 2.5rem;
-    right: 2.5rem;
+    right: 10%;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
@@ -183,7 +183,7 @@ div.banner {
     justify-content: center;
     grid-template-rows: 85% 15%;
     overflow: hidden;
-    transition: right .5s ease-out;
+    transition: all .5s ease-out;
 }
 .sidebar.show-menu{
     right: 0;
@@ -256,5 +256,26 @@ div.banner {
     }
     to{
         text-shadow: 0.2rem .1rem 4px slateblue;
+    }
+}
+
+/* MEDIA */
+
+@media only screen and (max-width: 768px) {
+    .sidebar{
+        width: 0vw;
+        background: linear-gradient(to bottom, #000000, #1d1b1d);
+    }
+    .sidebar.show-menu{
+        width: 100%;
+    }
+    .menu-ham.show-menu{
+        right: 10%;
+    }
+    .sidebar .menu li{
+        margin-top: 2rem;
+    }
+    .social__media a{
+        color: var(--text-w-color);
     }
 }
