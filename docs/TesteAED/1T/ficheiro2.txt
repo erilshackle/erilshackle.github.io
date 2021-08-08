@@ -1,0 +1,2 @@
+Total de Soma   = 650
+Media dos pares = 26.0
