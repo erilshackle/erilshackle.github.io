@@ -44,15 +44,15 @@
             <aside class="sidebar">
                 <nav>
                     <ul class="menu">
-                        <li class="menu__items"><a href="#" class="menu__links">Home</a></li>
-                        <li class="menu__items"><a href="#knowledge" class="menu__links">Conhecimento</a></li>
-                        <li class="menu__items"><a href="#projects" class="menu__links">Projetos</a></li>
-                        <li class="menu__items"><a href="#contact" class="menu__links">Contacto</a></li>
+                        <li class="menu__items"><a href="#" class="menu__links" onclick="closeMenu()">Home</a></li>
+                        <li class="menu__items"><a href="#knowledge" class="menu__links" onclick="closeMenu()">Conhecimento</a></li>
+                        <li class="menu__items"><a href="#projects" class="menu__links"onclick="closeMenu()">Projetos</a></li>
+                        <li class="menu__items"><a href="#contact" class="menu__links"onclick="closeMenu()">Contacto</a></li>
                     </ul>
                 </nav>
                 <div class="social__media">
                     <a href="https://www.facebook.com/eril.tavares" title="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://github.com/erilshackle"title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/erilshackle" title="GitHub"><i class="fab fa-github"></i></a>
                     <a href="mailto:erilandocarvalho@gmail.com" title="Gmail"><i class="fas fa-envelope"></i></a>
                 </div>
             </aside>
@@ -61,7 +61,7 @@
 
         <section id="knowledge">
 
-            <div class="knowledge_header">
+            <div class="section_header">
                 <h1>Conhecimentos</h1>
             </div>
             <hr class="rowbreaker">
@@ -145,6 +145,38 @@
                     <img src="img/programmer.svg" alt="programmer svg">
                     <figcaption>My Knowledge</figcaption>
                 </figure>
+            </article>
+
+        </section>
+
+        <section id="projects">
+            <div class="section_header">
+                <h1>Projetos</h1>
+            </div>
+            <hr class="rowbreaker">
+            <article class="projects_section">
+                <div class="section_cards">
+                    <div class="cards-img">
+                        <img src="./img/subject-manager-main.png" alt="subject-manager">
+                    </div>
+                    <div class="cards-overlay">
+                        <h2>Subject Manager</h2>
+                        <h3>C</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laudantium error adipisci labore voluptate possimus rerum autem, facilis quibusdam harum similique minima doloribus quis cum eaque quia? Fugit, et vitae!</p>
+                        <button>Link</button>
+                    </div>
+                </div>
+                <div class="section_cards">
+                    <div class="cards-img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="cards-overlay">
+                        <h2>project title</h2>
+                        <h3>project language</h3>
+                        <p>project description</p>
+                        <button>project link</button>
+                    </div>
+                </div>
             </article>
 
         </section>
