@@ -11,52 +11,139 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <div class="container">
+    <main class="container">
 
-        <div class="menu-ham">
-            <div class="lines"></div>
-            <div class="lines"></div>
-            <div class="lines"></div>
-            <span class="tooltip">Fechar</span>
-        </div>
+        <section id="Home">
 
-        <header id="header">
-            <div class="img-wrapper">
-                <img src="img/Web_Developer Wallpaper.jpg" alt="background">
+            <div class="menu-ham">
+                <div class="lines"></div>
+                <div class="lines"></div>
+                <div class="lines"></div>
+                <span class="tooltip">Fechar</span>
             </div>
-            <div class="banner">
-                <h1>Eril Shackle's GitHub Page</h1>
-                <p>Eril Carvalho</p>
-                <a href="https://erilshackle.github.io/erilshackle/">
-                    <button>Saber Mais</button>
-                </a>
-            </div>
-        </header>
-        
-        <div class="sidebar">
-            <nav>
-                <ul class="menu">
-                    <li class="menu__items"><a href="#" class="menu__links">Home</a></li>
-                    <li class="menu__items"><a href="#" class="menu__links">Conhecimento</a></li>
-                    <li class="menu__items"><a href="#" class="menu__links">Projetos</a></li>
-                    <li class="menu__items"><a href="#" class="menu__links">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="social__media">
-                <a href="https://www.facebook.com/eril.tavares"><i class="fab fa-facebook"></i></a>
-                <a href="https://github.com/erilshackle"><i class="fab fa-github"></i></a>
-                <a href="mailto:erilandocarvalho@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
 
-    </div>
+            <header id="header">
+                <div class="img-wrapper">
+                    <img src="img/Web_Developer Wallpaper.jpg" alt="background">
+                </div>
+                <div class="banner">
+                    <h1>Eril Shackle's GitHub Page</h1>
+                    <p>Eril Carvalho</p>
+                    <a href="https://erilshackle.github.io/erilshackle/">
+                        <button>Saber Mais</button>
+                    </a>
+                </div>
+            </header>
 
-    
+            <aside class="sidebar">
+                <nav>
+                    <ul class="menu">
+                        <li class="menu__items"><a href="#" class="menu__links">Home</a></li>
+                        <li class="menu__items"><a href="#knowledge" class="menu__links">Conhecimento</a></li>
+                        <li class="menu__items"><a href="#projects" class="menu__links">Projetos</a></li>
+                        <li class="menu__items"><a href="#contact" class="menu__links">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="social__media">
+                    <a href="https://www.facebook.com/eril.tavares" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://github.com/erilshackle"title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:erilandocarvalho@gmail.com" title="Gmail"><i class="fas fa-envelope"></i></a>
+                </div>
+            </aside>
+
+        </section>
+
+        <section id="knowledge">
+
+            <div class="knowledge_header">
+                <h1>Conhecimentos</h1>
+            </div>
+            <hr class="rowbreaker">
+            <article class="knowledge_section">
+                <!-- conhecimento 1 HTML-->
+                <div class="conhecimento">
+                    <div class="cohecimento__title">
+                        <i class="fab fa-html5 fa-2x"></i>
+                        <h3>HTML</h3>
+                    </div>
+                    <div class="conhecimento__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem cum totam
+                        repellat id ea facilis iure, perspiciatis perferendis delectus aliquam, minima quis eaque
+                        numquam culpa, nisi vero itaque possimus.
+                    </div>
+                </div>
+                <!-- conhecimento 2 CSS-->
+                <div class="conhecimento">
+                    <div class="cohecimento__title">
+                        <i class="fab fa-css3 fa-2x"></i>
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="conhecimento__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem cum totam
+                        repellat id ea facilis iure, perspiciatis perferendis delectus aliquam, minima quis eaque
+                        numquam culpa, nisi vero itaque possimus.
+                    </div>
+                </div>
+                <!-- conhecimento 3 JS-->
+                <div class="conhecimento">
+                    <div class="cohecimento__title">
+                        <i class="fab fa-js fa-2x"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="conhecimento__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem cum totam
+                        repellat id ea facilis iure, perspiciatis perferendis delectus aliquam, minima quis eaque
+                        numquam culpa, nisi vero itaque possimus.
+                    </div>
+                </div>
+                <!-- conhecimento 4 C-->
+                <div class="conhecimento">
+                    <div class="cohecimento__title">
+                        <i class="fas fa-code fa-2x"></i>
+                        <h3>C/C++ Language</h3>
+                    </div>
+                    <div class="conhecimento__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem cum totam
+                        repellat id ea facilis iure, perspiciatis perferendis delectus aliquam, minima quis eaque
+                        numquam culpa, nisi vero itaque possimus.
+                    </div>
+                </div>
+                <!-- conhecimento 5 PY-->
+                <div class="conhecimento">
+                    <div class="cohecimento__title">
+                        <i class="fab fab fa-python fa-2x"></i>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="conhecimento__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem cum totam
+                        repellat id ea facilis iure, perspiciatis perferendis delectus aliquam, minima quis eaque
+                        numquam culpa, nisi vero itaque possimus.
+                    </div>
+                </div>
+                <!-- conhecimento 6  GH-->
+                <div class="conhecimento">
+                    <div class="cohecimento__title">
+                        <i class="fab fa-github fa-2x"></i>
+                        <h3>GitHub</h3>
+                    </div>
+                    <div class="conhecimento__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem cum totam
+                        repellat id ea facilis iure, perspiciatis perferendis delectus aliquam, minima quis eaque
+                        numquam culpa, nisi vero itaque possimus.
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
     <script src="script.js"></script>
 </body>
 
