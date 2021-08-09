@@ -71,6 +71,7 @@ button{
     flex-direction: column;
     z-index: 20;
     cursor: pointer;
+    user-select: none;
     transition: .5s linear;
 }
 .menu-ham:hover:not(.show-menu) ~ .sidebar{
