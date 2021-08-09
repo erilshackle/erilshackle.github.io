@@ -80,6 +80,7 @@ button{
 .menu-ham.show-menu:hover > .tooltip{
     transition: .5s ease .5s;
     visibility: visible;
+    user-select: none;
 }
 .menu-ham .lines{
     background-color: var(--text-w-color);
@@ -554,5 +555,48 @@ div.banner {
         top: 0;
         bottom: 100%;
         transform: rotate(45deg) translateY(-50%);
+    }
+    /* Knowledes */
+    .knowledge_section{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, auto);
+        row-gap: 2rem;
+    }
+    .conhecimento{
+        margin: 0 .5rem;
+    }
+    .conhecimento:nth-child(1){
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .conhecimento:nth-child(2){
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .conhecimento:nth-child(3){
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .conhecimento:nth-child(4){
+        grid-column: 1;
+        grid-row: 5;
+    }
+    .conhecimento:nth-child(5){
+        grid-column: 1;
+        grid-row: 6;
+    }
+    .conhecimento:nth-child(6){
+        grid-column: 1;
+        grid-row: 7;
+    }
+    .knowledge-img{
+        grid-column: 1;
+        grid-row: 1;
+
+    }
+    .knowledge-img img{
+    width: 40%;
+    height: auto;
     }
 }
