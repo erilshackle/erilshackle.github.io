@@ -10,7 +10,7 @@
     --text-b-color: #101010;
     --font-primary: 'Josefin Slab', sans-serif;
     --font-secundary: 'Baloo Chettan 2', serif;
-    --font-text: 'Roboto', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-text: Roboto, 'Open Sans',  sans-serif;
     --font-title: 'Baloo 2';
     --font-link: 'Mulish', sans-serif;
     --color-button: #ddd;
@@ -58,7 +58,7 @@ h3 {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    z-index: 10;
+    z-index: 20;
     cursor: pointer;
     transition: .5s linear;
 }
@@ -89,6 +89,10 @@ h3 {
 .show-menu .lines:nth-child(3){
     transform: rotate(-45deg) translate(5px, -8px);
 }
+.menu-ham:hover .lines{
+    box-shadow: 0px 0px 5px black;
+}
+
 .tooltip{
     position: absolute;
     background: var(--bg-button);
@@ -188,7 +192,7 @@ div.banner {
 .sidebar{
     position: fixed;
     background: rgba(235, 232, 229, 0.85);  /* fallback for old browsers */
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(236, 233, 230, .9)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(236, 233, 230, 1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     box-shadow: -1px 0px 5px rgba(0, 0, 0, 0.5);
     top: 0;
     right: -20rem;
@@ -200,6 +204,7 @@ div.banner {
     grid-template-rows: 85% 15%;
     overflow: hidden;
     transition: all .5s ease-out;
+    z-index: 10;
 }
 .sidebar.show-menu{
     right: 0;
@@ -248,13 +253,18 @@ div.banner {
 
 /* KNOWLEDGE */
 
+#knowledge, #home{
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
 .knowledge_header{
    display: flex;
    justify-content: center;
    text-align: center;
 }
 .knowledge_header h1{
-    font: 100 2.5rem var(--font-title);
+    font: 100 2.2rem var(--font-title);
     color: var(--bg--color);
 }
 
@@ -303,16 +313,48 @@ div.banner {
 .cohecimento__title{
     display: flex;
     justify-content: flex-start;
+    color: var(--bg--color);
+    align-items: baseline;
 }
 .cohecimento__title h3{
     margin-left: 1rem;
-    font: 400 small-caps 1.3rem var(--font-secundary);
+    font: 400 small-caps 1.1rem var(--font-secundary);
+}
+.rating{
+    position: relative;
+    margin: auto 0 auto auto;
 }
 
-.cohecimento__description{
-    margin-top: 1rem;
+.conhecimento__description{
+    font-size: .8rem;
+    font-family: var(--font-text);
+    text-align: justify;
+    margin-top: .25rem;
 }
 
+.knowledge-img{
+    grid-column: 7 / 12;
+    grid-row: 2 / 6;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+.knowledge-img img{
+    width: 75%;
+    height: auto;
+    user-select: none;
+    transition: 1s ease;
+}
+.knowledge-img:hover img{
+    filter: hue-rotate(20deg);
+    animation: interact 4s ease-in-out alternate;
+}
+.knowledge-img figcaption{
+    opacity: .5;
+    font-family: 'Courier New', Courier, monospace;
+    font-variant: small-caps;
+    pointer-events: none;
+}
 /* ANIMATIONS */
 
 @keyframes zoom {
@@ -344,7 +386,18 @@ div.banner {
         text-shadow: 0.2rem .1rem 4px slateblue;
     }
 }
+@keyframes interact {
+    from{
+        transform: rotateX(0deg);
+    }   
+    50%{
 
+        transform: rotateX(-15deg);
+    } 
+    to{
+        transform: rotateX(0deg);
+    }
+}
 
 
 /* MEDIA */
