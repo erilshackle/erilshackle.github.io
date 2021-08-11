@@ -7,7 +7,7 @@
     --bg--color: #333;
     --bg-card: #d7dde8;
     --bg-button-grad: linear-gradient(to top right, #753a88, #cc2b5e);
-    --bg-card-grad: linear-gradient(to top, #757f9a, #d7dde8);
+    --bg-card-grad: linear-gradient(to top, #212c47, #000000);
     --text-w-color: #f8f8ff;
     --text-b-color: #101010;
     --font-primary: 'Josefin Slab', sans-serif;
@@ -18,6 +18,7 @@
     --color-button: #ddd;
     --color-icons: #111;
     --color-links: #88d;
+    --color-v-links: #44a;
 }
 
 *{
@@ -56,6 +57,14 @@ button{
     cursor: pointer;
 }
 
+
+/* CLASSES */
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
 /* HOME */
 
@@ -195,9 +204,11 @@ div.banner {
     transition: color,filter, .5s ease-in;
     filter: hue-rotate(0deg);
 }
+
 .banner button:hover{
     filter: hue-rotate(40deg);
     color: #fff;
+    animation: hover-bn 1s ;
 }
 .banner button:active{
     filter: invert(100%);
@@ -242,7 +253,7 @@ div.banner {
     color: var(--color-links);
 }
 .menu__links:hover{
-    color: #44a;
+    color: var(--color-v-links);
 }
 
 .social__media{
@@ -267,7 +278,7 @@ div.banner {
 
 /* SECTIONS */
 
-#knowledge, #home, #projects{
+#knowledge, #home, #projects, #contact{
     position: relative;
     min-height: 100vh;
     max-width: 100vw;
@@ -294,7 +305,7 @@ div.banner {
 
 /* KNOWLEDGE */
 
-.knowledge_section{
+.knowledge-section{
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -376,7 +387,7 @@ div.banner {
 
 /* PROJECTS */
 
-.projects_section{
+.projects-section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -433,6 +444,7 @@ div.banner {
 }
 .section_cards:hover img{
     transform: scale(1.025);
+    opacity: .7;
 }
 
 .cards-overlay h2{
@@ -476,6 +488,102 @@ div.banner {
     filter: hue-rotate(-50deg);
 }
 
+/* CONTACTS */
+
+.contact-section{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.painel-contact{
+    background: #000;
+    display: flex;
+    width: 60%;
+    height: 30rem;
+    margin-top: 2%;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+
+.contact-img-banner{
+    display: block;
+    flex: 40%;
+    background: linear-gradient(to top, #eeecff1a,  #f3f3f380),
+                url(/img/consultation-chat-answer-contact-support-line-glyph-web.jpg);
+    background-size: cover;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    transition: all 1s ease-out;
+}
+.painel-contact:hover .contact-img-banner{
+    background-position-x: left;
+}
+
+.contact-card{
+    flex: 65%;
+    background: var(--bg-card);
+    display: flex;
+    padding: 2rem 4rem;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.contact-card h1{
+    flex: 20%;
+    font: 700 2rem var(--font-link);
+    color: var(--color-icons);
+}
+.contact-card form{
+    flex: 80%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+}
+
+.input-group{
+    margin: 1rem auto;
+    width: 100%;
+}
+.input-group *{
+    width: 100%;
+    outline: none;
+    font-family: var(--font-text);
+}
+
+.input-group  label{
+    font-family: var(--font-secundary);
+    font-variant: small-caps;
+}
+.input-group  input{
+    border: none;
+    border-bottom: 2px solid var(--bg--color);
+    background: transparent;
+    font-family: var(--font-text);
+    margin-top: .3rem;
+    font-size: .9rem;
+}
+.input-group textarea{
+    border: none;
+    box-shadow: 0px 0px 2px black;
+    border-radius: .2rem;
+    resize: none;
+}
+
+.contact-card button{
+    padding: .5rem 0;
+    width: 5rem;
+    margin: 0 auto;
+    background: var(--color-links);
+    transition: all .6s ease;
+}
+.contact-card button:hover{
+    background-color: var(--color-v-links);
+}
+
 /* ANIMATIONS */
 
 @keyframes zoom {
@@ -493,10 +601,6 @@ div.banner {
     }
     50%{
         transform: translateY(-10px) rotateX(45deg);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0px) rotateX(0deg);
     }
 }
 @keyframes title{
@@ -520,7 +624,13 @@ div.banner {
     }
 }
 
+@keyframes hover-btn{
+    to{
+        opacity: 0;
+        transform: scale(1.25, 1.5);
+    }
 
+}
 
 /* MEDIA */
 
