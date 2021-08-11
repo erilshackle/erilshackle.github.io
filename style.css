@@ -444,7 +444,7 @@ div.banner {
 }
 .section_cards:hover img{
     transform: scale(1.025);
-    opacity: .7;
+    opacity: .6;
 }
 
 .cards-overlay h2{
@@ -462,7 +462,7 @@ div.banner {
 .cards-overlay h3::before{
     font-family: "Font Awesome 5 Free"; font-weight: 600; content: "\f121"; /*code icon*/
     font-size: small;
-    color: var(--color-icons);
+    color: var(--color-button);
     opacity: .75;
     margin-right: .4rem;
 }
@@ -477,11 +477,14 @@ div.banner {
     background: var(--bg-button);
     
 }
-.cards-overlay button{
-    font-family: var(--font-title);
+.cards-overlay a{
     width: 45%;
+    margin: .5rem auto;
+}
+.cards-overlay button{
+    width: 100%;
     padding: .6rem;
-    margin: .4rem auto;
+    font-family: var(--font-title);
     transition: all .6s ease-out;
 }
 .cards-overlay button:hover{
