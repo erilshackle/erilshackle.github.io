@@ -633,7 +633,7 @@ div.banner {
     border: 2px solid var(--bg-button);
     border-radius: 2rem 3.5rem;
     filter: invert(100%);
-    transition: all 1s ease-in 1s;
+    transition: all .6s ease-in .4s;
     cursor: crosshair;
 }
 .footer__logo:hover{
