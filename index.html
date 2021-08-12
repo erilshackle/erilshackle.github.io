@@ -11,15 +11,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="page">
 
     <main id="main-page">
 
-        <section id="Home">
+        <section id="main">
 
             <div class="menu-ham">
                 <div class="lines"></div>
@@ -202,9 +200,8 @@
                         <form id="email__form" action="javascript:sendEmail()" method="POST">
                             <div class="input-group">
                                 <label for="name__contact">Nome</label>
-                                <input id="name__contact" type="text" name="name" class="input-field"
-                                    placeholder="Enter your Name" required autofocus>
-                            </div>
+                                <input id="name__contact" type="text" name="name" class="input-field" placeholder="Enter your Name" required>
+                           </div>
                             <div class="input-group">
                                 <label for="email__contact">E-mail</label>
                                 <input id="email__contact" type="email" name="email" class="input-field"

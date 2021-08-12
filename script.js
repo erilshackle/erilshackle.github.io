@@ -16,13 +16,6 @@ menu_ham.addEventListener('click',function(){
     menu_ham.classList.toggle("show-menu");
 
 });
-// $(".menu-ham").click(function(){
-//     $(".sidebar").toggleClass("show-menu");
-//     $(".menu-ham").toggleClass("show-menu");
-// })
-
-
-
 
 function closeMenu(){
     let sidebar = document.getElementsByClassName('sidebar');
