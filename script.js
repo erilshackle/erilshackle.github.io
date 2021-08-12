@@ -1,4 +1,4 @@
-alert("Página em Desenvolvimento")
+// alert("Página em Desenvolvimento")
 
 $(".menu-ham").click(function(){
     $(".sidebar").toggleClass("show-menu");

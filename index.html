@@ -191,18 +191,18 @@
                     <div class="contact-img-banner"></div>
                     <div class="contact-card">
                         <h1>Contacto</h1>
-                        <form >
+                        <form id="email__form" action="script/send-email.php" method="POST">
                             <div class="input-group">
                                 <label for="name__contact">Nome</label>
-                                <input id="name__contact" type="text" class="input-field" placeholder="Enter your Name" required autofocus>
+                                <input id="name__contact" type="text" name="name" class="input-field" placeholder="Enter your Name" required autofocus>
                             </div>
                             <div class="input-group">
                                 <label for="email__contact">E-mail</label>
-                                <input id="email__contact" type="email" class="input-field" placeholder="Enter your E-mail" required autocomplete="true">
+                                <input id="email__contact" type="email" name="email" class="input-field" placeholder="Enter your E-mail" required autocomplete="true">
                             </div>
                             <div class="input-group">
                                 <label for="msg__contact">Mensagem</label>
-                                <textarea id="msg__contact"  class="input-field" rows="8" cols="24"></textarea>
+                                <textarea id="msg__contact"  class="input-field" name="message" rows="8" cols="24"></textarea>
                             </div>
                             <button type="submit">Enviar</button>
                         </form>
