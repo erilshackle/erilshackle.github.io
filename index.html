@@ -17,7 +17,7 @@
 
 <body>
 
-    <main class="container">
+    <main id="main-page">
 
         <section id="Home">
 
@@ -45,9 +45,12 @@
                 <nav>
                     <ul class="menu">
                         <li class="menu__items"><a href="#" class="menu__links" onclick="closeMenu()">Home</a></li>
-                        <li class="menu__items"><a href="#knowledge" class="menu__links" onclick="closeMenu()">Conhecimento</a></li>
-                        <li class="menu__items"><a href="#projects" class="menu__links"onclick="closeMenu()">Projetos</a></li>
-                        <li class="menu__items"><a href="#contact" class="menu__links"onclick="closeMenu()">Contacto</a></li>
+                        <li class="menu__items"><a href="javascript:gotoSection('knowledge')" class="menu__links"
+                                onclick="closeMenu()">Conhecimento</a></li>
+                        <li class="menu__items"><a href="javascript:gotoSection('projects')" class="menu__links"
+                                onclick="closeMenu()">Projetos</a></li>
+                        <li class="menu__items"><a href="javascript:gotoSection('contact')" class="menu__links"
+                                onclick="closeMenu()">Contacto</a></li>
                     </ul>
                 </nav>
                 <div class="social__media">
@@ -162,7 +165,10 @@
                     <div class="cards-overlay">
                         <h2>Subject Manager</h2>
                         <h3>C</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laudantium error adipisci labore voluptate possimus rerum autem, facilis quibusdam harum similique minima doloribus quis cum eaque quia? Fugit, et vitae!</p>
+                        <p>
+                            Um programa de consola para gerenciar disciplinas do estudante, controla notas e todos os
+                            dados relevantes.
+                        </p>
                         <a href=""><button>Link</button></a>
                     </div>
                 </div>
@@ -173,7 +179,9 @@
                     <div class="cards-overlay">
                         <h2>Teste AED</h2>
                         <h3>C</h3>
-                        <p>Resolução de testes da disciplina de Algoritmo e Estrutura de Dados do ano 20/21 da UniCV</p>
+                        <p>
+                            Resolução de testes da disciplina de Algoritmo e Estrutura de Dados do ano 20/21 da UniCV
+                        </p>
                         <a href="/docs/TesteAED/index.html"><button>Ver Projeto</button></a>
                     </div>
                 </div>
@@ -191,18 +199,21 @@
                     <div class="contact-img-banner"></div>
                     <div class="contact-card">
                         <h1>Contacto</h1>
-                        <form id="email__form" action="script/send-email.php" method="POST">
+                        <form id="email__form" action="javascript:sendEmail()" method="POST">
                             <div class="input-group">
                                 <label for="name__contact">Nome</label>
-                                <input id="name__contact" type="text" name="name" class="input-field" placeholder="Enter your Name" required autofocus>
+                                <input id="name__contact" type="text" name="name" class="input-field"
+                                    placeholder="Enter your Name" required autofocus>
                             </div>
                             <div class="input-group">
                                 <label for="email__contact">E-mail</label>
-                                <input id="email__contact" type="email" name="email" class="input-field" placeholder="Enter your E-mail" required autocomplete="true">
+                                <input id="email__contact" type="email" name="email" class="input-field"
+                                    placeholder="Enter your E-mail" required autocomplete="true">
                             </div>
                             <div class="input-group">
                                 <label for="msg__contact">Mensagem</label>
-                                <textarea id="msg__contact"  class="input-field" name="message" rows="8" cols="24"></textarea>
+                                <textarea id="msg__contact" class="input-field" name="message" rows="8"
+                                    cols="24"></textarea>
                             </div>
                             <button type="submit">Enviar</button>
                         </form>
@@ -211,6 +222,30 @@
             </article>
 
         </section>
+
+        <footer id="footer">
+
+            <div class="footer-section">
+                <span class="footer__logo" title="Eril Shackle">
+                    <!-- <img src="img/erilshackles.jpg" alt="𝕰𝖗𝖎𝖑 𝕾𝖍𝖆𝖈𝖐𝖑𝖊'𝓼"> -->
+                </span>
+                <p class="footer__copyright">
+                    copyright &copy; 2021 - Eril Carvalho - All rights reserved
+                </p>
+                <span class="footer__social">
+                    <ul>
+                        <li><a href=""><i class="fab fab fa-facebook-square fa-2x" style="color:royalblue"></i></a></li>
+                        <li><a href=""><i class="fab fa-instagram fa-2x" style="color:mediumvioletred"></i></a></li>
+                        <li><a href=""><i class="fab fa-linkedin fa-2x" style="color:deepskyblue"></i></a></li>
+                    </ul>
+                </span>
+            </div>
+
+        </footer>
+
+        <button onclick="gotoTop()" id="goto-top" title="Ir para o topo">
+            <i class="fas fa-arrow-up fa-2x"></i>
+        </button>
 
     </main>
 

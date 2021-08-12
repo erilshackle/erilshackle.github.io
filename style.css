@@ -4,6 +4,7 @@
 
 :root{
     --bg-button: #cc2b5e;
+    --bg-i-button: #2fddcc;
     --bg--color: #333;
     --bg-card: #d7dde8;
     --bg-button-grad: linear-gradient(to top right, #753a88, #cc2b5e);
@@ -25,6 +26,9 @@
     margin: 0;
     padding: 0;
 }
+
+
+
 /* default tags */
 
 li {
@@ -278,7 +282,7 @@ div.banner {
 
 /* SECTIONS */
 
-#knowledge, #home, #projects, #contact{
+#home, #knowledge, #projects, #contact{
     position: relative;
     min-height: 100vh;
     max-width: 100vw;
@@ -467,7 +471,7 @@ div.banner {
     margin-right: .4rem;
 }
 .cards-overlay p{
-    font: 200 1rem var(--font-text) ; 
+    font: 200 .8rem var(--font-text) ; 
     overflow-y: scroll;
     height: 4rem;
     flex: 1;
@@ -556,6 +560,11 @@ div.banner {
     outline: none;
     font-family: var(--font-text);
 }
+.input-group *:focus{
+    opacity: 1;
+    border-color: var(--bg-button);
+    transition: 1s ease;
+}
 
 .input-group  label{
     font-family: var(--font-secundary);
@@ -574,8 +583,12 @@ div.banner {
     box-shadow: 0px 0px 2px black;
     border-radius: .2rem;
     resize: none;
+    padding: .4rem;
     background-color: rgba(0, 0, 0, 0.6);
     color: var(--text-w-color);
+    font-size: .9rem;
+    opacity: .6;
+    transition: opacity .6s ease-out;
 }
 
 .contact-card button{
@@ -588,6 +601,97 @@ div.banner {
 .contact-card button:hover{
     background-color: var(--color-v-links);
 }
+
+/* FOOTER */
+
+#footer{
+    width: 100%;
+    height: auto;
+    min-height: 7rem;
+    background: linear-gradient(to top, #111, #222);
+    color: #eee;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-section{
+    position: relative;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__logo{
+    width: 10rem;
+    height: 2rem;
+    background: url("img/erilshackles.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    border: 2px solid var(--bg-button);
+    border-radius: 2rem 3.5rem;
+    filter: invert(100%);
+    transition: all 1s ease-in 1s;
+    cursor: crosshair;
+}
+.footer__logo:hover{
+    transform: scale(1.25);
+}
+.footer__logo:active{
+    border-color: var(--bg-i-button);
+}
+
+.footer__copyright{
+    font: 100 .9rem 'Roboto';
+    letter-spacing: 2pt;
+}
+.footer__copyright::selection {
+    color: var(--bg-i-button);
+}
+
+.footer__social ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer__social li{
+    margin:  auto 1rem;
+}
+.footer__social li a{
+    color: var(--text-w-color);
+}
+.footer__social li a:hover{
+    filter: saturate(5);
+}
+
+/* FIXEDS */
+
+#goto-top{
+    display: none;
+    position: fixed;
+    justify-content: center; align-items: center;
+    z-index: 5;
+    right: 3rem;
+    bottom: 2rem;
+    background-color: var(--color-icons);
+    color: var(--text-w-color);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .6;
+    transition: opacity .4s linear;
+}
+#goto-top:hover{
+    opacity: 1;
+}
+#goto-top:active{
+    transform: rotateX(30deg);
+}
+
 
 /* ANIMATIONS */
 
