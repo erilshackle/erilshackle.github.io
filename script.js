@@ -1,6 +1,6 @@
 const menu_ham = document.querySelector(".menu-ham");
 const topBtn = document.getElementById("goto-top");
-
+const cardsOverlay = document.getElementsByClassName("cards-overlay");
 
 function gotoSection(elementId) {
   var element = document.getElementById(elementId);
@@ -10,12 +10,21 @@ function gotoSection(elementId) {
   });
 }
 
+// cardsOverlay.forEach(card => {
+//   card.addEventListener('touchstart', (e)=> {
+//       this.preventDefault();
+//       e.classList.remove
+
+//   } )
+// });
+
 menu_ham.addEventListener('click',function(){
     let sidebar = document.getElementsByClassName("sidebar");
     sidebar[0].classList.toggle("show-menu");
     menu_ham.classList.toggle("show-menu");
 
 });
+
 
 function closeMenu(){
     let sidebar = document.getElementsByClassName('sidebar');
