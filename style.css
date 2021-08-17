@@ -447,7 +447,7 @@ div.banner {
     opacity: 1;
 }
 .section_cards:hover img{
-    transform: scale(1.1) rotateZ(20deg);
+    transform: scale(1.1) rotateZ(15deg);
     opacity: .6;
 }
 
