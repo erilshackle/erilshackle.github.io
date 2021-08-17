@@ -199,6 +199,7 @@ div.banner {
     background: #cc2b5e;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
     background: var(--bg-button-grad);
+     mix-blend-mode: color-dodge;
     border-radius: 2px;
     color: var(--color-button);
     letter-spacing: 2px;
@@ -447,7 +448,7 @@ div.banner {
     opacity: 1;
 }
 .section_cards:hover img{
-    transform: scale(1.025));
+    transform: scale(1.025);
     opacity: .6;
 }
 
