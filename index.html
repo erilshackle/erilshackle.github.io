@@ -30,6 +30,16 @@
                 <div class="img-wrapper">
                     <img src="img/Web_Developer Wallpaper.jpg" alt="background">
                 </div>
+
+                <nav id="top-menu">
+                    <ul class="top-menu__navigation">
+                        <li class="top-menu__links"><a href="#">Home</a></li>
+                        <li class="top-menu__links"><a href="javascript:gotoSection('knowledge')">Conhecimentos</a></li>
+                        <li class="top-menu__links"><a href="javascript:gotoSection('projects')">Projetos</a></li>
+                        <li class="top-menu__links"><a href="javascript:gotoSection('contact')">Contactos</a></li>
+                    </ul>
+                </nav>
+
                 <div class="banner">
                     <h1>Eril Shackle's GitHub Page</h1>
                     <p>Eril Carvalho</p>
@@ -42,13 +52,10 @@
             <aside class="sidebar">
                 <nav>
                     <ul class="menu">
-                        <li class="menu__items"><a href="#" class="menu__links" onclick="closeMenu()">Home</a></li>
-                        <li class="menu__items"><a href="javascript:gotoSection('knowledge')" class="menu__links"
-                                onclick="closeMenu()">Conhecimento</a></li>
-                        <li class="menu__items"><a href="javascript:gotoSection('projects')" class="menu__links"
-                                onclick="closeMenu()">Projetos</a></li>
-                        <li class="menu__items"><a href="javascript:gotoSection('contact')" class="menu__links"
-                                onclick="closeMenu()">Contacto</a></li>
+                        <li class="menu__items"><a href="#" class="menu__links">Home</a></li>
+                        <li class="menu__items"><a href="#" class="menu__links">Conhecimento</a></li>
+                        <li class="menu__items"><a href="#" class="menu__links">Projetos</a></li>
+                        <li class="menu__items"><a href="#" class="menu__links">Contacto</a></li>
                     </ul>
                 </nav>
                 <div class="social__media">
@@ -165,10 +172,11 @@
                         <h3>C</h3>
                         <p>
                             Um programa de consola para gerenciar disciplinas do estudante, controla notas e todos os
-                            dados relevantes.<br/><br/>
+                            dados relevantes.<br /><br />
                             O prejeto estará disponível no repositório brevemente.
                         </p>
-                        <a href="https://drive.google.com/file/d/16t9MB-SGSPF8ygmCdRjO-Ndjpyb7Zhax/view?usp=sharing" target="_blank"><button>Baixar</button></a>
+                        <a href="https://drive.google.com/file/d/16t9MB-SGSPF8ygmCdRjO-Ndjpyb7Zhax/view?usp=sharing"
+                            target="_blank"><button>Baixar</button></a>
                     </div>
                 </div>
                 <div class="section_cards">
@@ -201,8 +209,9 @@
                         <form id="email__form" action="javascript:sendEmail()" method="POST">
                             <div class="input-group">
                                 <label for="name__contact">Nome</label>
-                                <input id="name__contact" type="text" name="name" class="input-field" placeholder="Enter your Name" required>
-                           </div>
+                                <input id="name__contact" type="text" name="name" class="input-field"
+                                    placeholder="Enter your Name" required>
+                            </div>
                             <div class="input-group">
                                 <label for="email__contact">E-mail</label>
                                 <input id="email__contact" type="email" name="email" class="input-field"
