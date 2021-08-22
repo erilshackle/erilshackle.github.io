@@ -3,6 +3,8 @@
 @import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 
 :root{
+    font-size: 16px;
+
     --bg-button: #cc2b5e;
     --bg-i-button: #2fddcc;
     --bg--color: #333;
@@ -14,7 +16,7 @@
     --font-primary: 'Josefin Slab', sans-serif;
     --font-secundary: 'Baloo Chettan 2', serif;
     --font-text: Roboto, 'Open Sans',  sans-serif;
-    --font-title: 'Baloo 2';
+    --font-title: 'Baloo 2', Impact, Haettenschweiler;
     --font-link: 'Mulish', sans-serif;
     --color-button: #ddd;
     --color-icons: #111;
@@ -37,6 +39,7 @@ li {
 }
 
 html{
+    font-size: 16px;
     scroll-behavior: smooth;
 }
 
@@ -239,7 +242,6 @@ div.banner {
     background: #cc2b5e;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
     background: var(--bg-button-grad);
-     mix-blend-mode: color-dodge;
     border-radius: 2px;
     color: var(--color-button);
     letter-spacing: 2px;
@@ -257,6 +259,59 @@ div.banner {
 }
 .banner button:active{
     filter: invert(100%);
+}
+
+.dev_photo{
+    position: absolute;
+    right: 5rem;
+    top: 70%;
+    animation: onBottom .5s ease-out alternate forwards;
+}
+.dev_photo img{
+    width: 9rem;
+    box-shadow: 0 0 .3rem var;
+    border-radius: 50% 30% 60% 40%;
+    border: 3px solid hsla(177, 99%, 44%, 0.7);
+    mix-blend-mode: screen;
+    user-select: none;
+}
+
+.devPic-totop{
+    animation: onTop .5s ease-out alternate forwards;
+}
+.devPic-totop > img{
+    transition: .1s ease-out;
+    width: 3rem;
+}
+
+@keyframes onTop {
+    from{
+        opacity: 0;
+        right: -11rem;
+        top: 2rem;
+    }
+    50%{
+        position: fixed;
+    }
+    to{
+        position: fixed;
+        opacity: 1;
+        right: 2.5rem;
+        top: 2rem;
+        z-index: 20;
+    }
+}
+@keyframes onBottom {
+    from{
+        opacity: 0;
+        top: 70%;
+        right: -11rem;
+    }
+    to{
+        opacity: 1;
+        right: 5rem;
+        top: 70%;
+    }
 }
 
 .sidebar{
@@ -708,6 +763,59 @@ div.banner {
 
 /* FIXEDS */
 
+#modal-pic{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.9));
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+#modal-pic figure{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    object-fit: cover;
+    text-align: center;
+    height: 80%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    border-radius: 2rem;
+    cursor: default;
+    transition: .3s ease;
+    user-select: none;
+}
+#modal-pic figure figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.5);
+    width: 100%;
+    height: auto;
+    font: 500 1.6rem var(--font-title);
+    color: var(--text-w-color);
+    letter-spacing: 4pt;
+}
+#modal-pic figure img{
+    width: auto;
+    height: 100%;
+    margin: auto;
+    border-radius: 2rem;
+}
+#close-model{
+    position: absolute;
+    bottom: 95%;
+    left: 95%;
+    z-index: 101;
+    background: none;
+    color: var(--bg-button);
+    border-radius: 50%;
+    background-color: var(--bg-card);
+}
+
 #goto-top{
     display: none;
     position: fixed;
@@ -790,23 +898,42 @@ div.banner {
     }
     header div.banner{
         width: 100%;
-        left: 0;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
         text-align: center;
     }
     .banner h1{
         font-size: 2rem;
+        width: 80%;
+        margin: 0 auto;
         
     } .banner p{
         font-size: 1rem;
         margin: 2rem 0;
+        background: radial-gradient( rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0), rgba(0,0,0,0));
     }
     .banner button{
         padding: 1rem;
         font-size: .9rem;
-        margin-top: 3rem;
-        mix-blend-mode: lighten;
+        margin-top: 0rem;
         border-radius: 5px;
     }
+
+    .dev_photo{
+        position: absolute;
+        right: unset;
+        bottom: unset;
+        top: 2.7rem;
+        left: 2rem;
+        animation: none;
+        z-index: 20;
+    }
+
+    .dev_photo img{
+        width: 3rem;
+    }
+
     /* header */
 
     #top-menu{
@@ -843,6 +970,7 @@ div.banner {
         height: 100%;
         grid-template-rows: 80% 20%;
         background: linear-gradient(to bottom, #000000, #1d1b1d);
+        background-attachment: fixed;
     }
     .sidebar.show-menu{
         width: 100%;
@@ -1040,5 +1168,30 @@ div.banner {
     .footer__social{
         grid-column: 2 / 3;
         grid-row: 1;
+    }
+
+
+
+    #modal-pic{
+        background: rgba(0, 0, 0, 0.8);
+    }
+    #modal-pic figure{
+        box-shadow: none;
+        background-color: transparent;
+    }
+    #modal-pic figure figcaption{
+        background: none;
+        
+    }
+    #modal-pic figure img{
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+    #close-model{
+        left: unset;
+        right: 0;
+        top: 0;
+        background: none;
     }
 }

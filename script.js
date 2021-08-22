@@ -1,6 +1,11 @@
 const menu_ham = document.querySelector(".menu-ham");
 const topBtn = document.getElementById("goto-top");
 const cardsOverlay = document.getElementsByClassName("cards-overlay");
+const model = document.getElementById("modal-pic");
+let closeModel = document.getElementById("close-model");
+let devPic = document.querySelector("#dev-pic");
+
+
 
 function gotoSection(elementId) {
   var element = document.getElementById(elementId);
@@ -10,19 +15,20 @@ function gotoSection(elementId) {
   });
 }
 
-// cardsOverlay.forEach(card => {
-//   card.addEventListener('touchstart', (e)=> {
-//       this.preventDefault();
-//       e.classList.remove
-
-//   } )
-// });
-
 menu_ham.addEventListener('click',function(){
     let sidebar = document.getElementsByClassName("sidebar");
+    let devPic_box = document.getElementsByClassName("dev_photo")[0];
     sidebar[0].classList.toggle("show-menu");
     menu_ham.classList.toggle("show-menu");
+    devPic_box.classList.toggle("devPic-totop");
+});
 
+closeModel.addEventListener('click', ()=>{
+    model.style.display = "none";
+});
+
+devPic.addEventListener('click', ()=>{
+  model.style.display = "flex";
 });
 
 
