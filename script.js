@@ -2,8 +2,6 @@ const menu_ham = document.querySelector(".menu-ham");
 const topBtn = document.getElementById("goto-top");
 const cardsOverlay = document.getElementsByClassName("cards-overlay");
 const model = document.getElementById("modal-pic");
-let closeModel = document.getElementById("close-model");
-let devPic = document.querySelector("#dev-pic");
 
 
 
@@ -23,14 +21,9 @@ menu_ham.addEventListener('click',function(){
     devPic_box.classList.toggle("devPic-totop");
 });
 
-closeModel.addEventListener('click', ()=>{
-    model.style.display = "none";
+$(".dev_photo, #close-model").click( () => {
+    $("#modal-pic").toggleClass("modal-opened");
 });
-
-devPic.addEventListener('click', ()=>{
-  model.style.display = "flex";
-});
-
 
 function closeMenu(){
     let sidebar = document.getElementsByClassName('sidebar');
